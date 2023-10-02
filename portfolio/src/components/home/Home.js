@@ -3,19 +3,20 @@ import Banner from "../banner/Banner";
 import About from "../about/About";
 import Services from "../serviceDiv/Services";
 import Skills from "../skills/Skills";
-import Freelance from "../freelance/Freelance";
 import Contact from "../contact/Contact";
+import Footer from "../footer/Footer";
 
 const Home = () => {
   return (
-    <>
+    <section id="home">
+
       <Banner />
       <About />
       <Services />
       <Skills />
-      <Freelance />
-      {/* <Contact /> */}
-    </>
+      <Contact />
+      <Footer />
+    </section>
   );
 };
 

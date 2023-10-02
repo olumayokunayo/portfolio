@@ -36,7 +36,7 @@ const Services = () => {
   };
   return (
     <>
-      <Container maxWidth="lg" sx={{ marginTop: "3rem", height: "100vh" }}>
+      <Container maxWidth="lg" sx={{ marginTop: "3rem", height: "100vh" }} id="services">
         <Typography
           variant="h2"
           sx={{

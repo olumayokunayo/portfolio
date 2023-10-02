@@ -11,6 +11,7 @@ import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
 
 import "@fontsource/roboto/500.css";
+import { Link } from "react-router-dom";
 const pages = [
   "Home",
   "About",
@@ -44,7 +45,11 @@ const Header = () => {
   return (
     <AppBar sx={{ bgcolor: "#000" }}>
       <Container maxWidth="lg">
-        <Toolbar disableGutters sx={{ justifyContent: "space-between" }}>
+        <Toolbar
+          disableGutters
+          sx={{ justifyContent: "space-between" }}
+          className="smooth-scroll"
+        >
           <Box
             sx={{ display: { xs: "flex", md: "none" }, alignItems: "center" }}
           >
@@ -72,10 +77,7 @@ const Header = () => {
               onClose={handleCloseNavMenu}
             >
               {pages.map((page) => (
-                <MenuItem
-                  key={page}
-                  onClick={handleCloseNavMenu}
-                >
+                <MenuItem key={page} onClick={handleCloseNavMenu}>
                   <Typography
                     component="div"
                     sx={{
@@ -122,6 +124,8 @@ const Header = () => {
           <Box sx={{ display: "flex", alignItems: "center" }}>
             {pages.map((page) => (
               <Button
+                component="a"
+                href={`#${page.toLowerCase()}`}
                 key={page}
                 onClick={handleCloseNavMenu}
                 sx={{

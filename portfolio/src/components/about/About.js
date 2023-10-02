@@ -7,7 +7,7 @@ import github from "react-useanimations/lib/github";
 const About = () => {
   return (
     <>
-      <Container maxWidth="lg">
+      <Container maxWidth="lg" id="about" sx={{ marginTop: "4rem" }}>
         <Container>
           <div
             style={{

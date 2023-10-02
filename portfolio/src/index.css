@@ -10,6 +10,12 @@ body {
   background-color: #000;
   font-family: 'Josefin Sans', sans-serif;
 }
+html {
+  scroll-behavior: smooth;
+}
+.smooth-scroll a {
+  scroll-behavior: smooth;
+}
 
 /* code {
   font-family: 'Bungee Inline', cursive;

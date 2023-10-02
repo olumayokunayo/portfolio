@@ -45,6 +45,7 @@ const Skills = () => {
           justifyContent: "center",
           minHeight: "80vh",
         }}
+        id="skills"
       >
         <Container>
           {" "}
