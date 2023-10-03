@@ -9,7 +9,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
-import { Link } from "react-router-dom"; 
+import { Link } from "react-router-dom";
 import "@fontsource/roboto/500.css";
 import "./Header.css";
 
@@ -63,8 +63,8 @@ const Header = () => {
               {pages.map((page) => (
                 <MenuItem key={page} onClick={handleCloseNavMenu}>
                   <Button
-                    component={Link} // Use Link instead of 'a'
-                    to={`/${page.toLowerCase()}`} // Update to use Link path
+                    component="a"
+                    href={`#${page.toLowerCase()}`}
                     sx={{
                       color: "#000",
                     }}
