@@ -1,18 +1,23 @@
 import React from "react";
-import { Box, Container, Grid, Typography } from "@mui/material";
+import { Box, Container, Grid, Typography, useMediaQuery } from "@mui/material";
 import TwitterIcon from "@mui/icons-material/Twitter";
-import FacebookIcon from "@mui/icons-material/Facebook";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import ArrowRightAltIcon from "@mui/icons-material/ArrowRightAlt";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import CallIcon from "@mui/icons-material/Call";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
+  const isSmallScreen = useMediaQuery("(max-width: 600px");
   const headerStyle = {
     color: "#fff",
+    fontSize: isSmallScreen ? "1.2rem" : "",
   };
   const iconStyle = {
-    color: "#a3a3a3",
+    color: "#fff",
+    textDecoration: "none",
+    cursor: "pointer",
   };
   const iconDivStyle = {
     display: "flex",
@@ -23,7 +28,16 @@ const Footer = () => {
     borderRadius: " 50%",
     backgroundColor: "#1a1a1a",
   };
-
+  const handleTwitter = () => {
+    window.location.href = "https://twitter.com/dejieuro";
+  };
+  const handleLinkedin = () => {
+    window.location.href =
+      "https://www.linkedin.com/in/olumayokun-ogunfowora-708544262/";
+  };
+  const handleInstagram = () => {
+    window.location.href = "https://www.instagram.com/olumayokunayo/";
+  };
   const year = new Date().getFullYear();
   return (
     <Container>
@@ -39,31 +53,40 @@ const Footer = () => {
       >
         {" "}
         <Grid container spacing={4}>
-          <Grid item xs={5}>
+          <Grid item xs={12} sm={5}>
             <Typography variant="h5" style={headerStyle}>
               About
             </Typography>
             <Box sx={{ marginTop: "2rem" }}>
               <Typography sx={{ color: "#a3a3a3", marginBottom: "2rem" }}>
-                Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
-                quae ab illo inventore veritatis et quasi architecto beatae
-                vitae dicta sunt explicabo.
+                Passionate frontend developer with expertise in crafting
+                seamless and visually stunning web interfaces. Proficient in
+                HTML, CSS, and JavaScript, specializing in framework like
+                React.js. Committed to continuous learning and embracing
+                challenges to create elegant solutions. Let's collaborate to
+                turn your digital vision into reality! 👨‍💻✨
               </Typography>
               <Box sx={{ display: "flex", gap: "1rem", alignItems: "center" }}>
                 <div style={iconDivStyle}>
-                  <TwitterIcon style={iconStyle} />
+                  <TwitterIcon
+                    style={iconStyle}
+                    // component="a"
+                    // href="https://twitter.com/dejieuro"
+                    // target="_blank"
+                    // rel="noopener noreferrer"
+                    onClick={handleTwitter}
+                  />
                 </div>
                 <div style={iconDivStyle}>
-                  <FacebookIcon style={iconStyle} />
+                  <LinkedInIcon style={iconStyle} onClick={handleLinkedin} />
                 </div>
                 <div style={iconDivStyle}>
-                  <InstagramIcon style={iconStyle} />
+                  <InstagramIcon style={iconStyle} onClick={handleInstagram} />
                 </div>
               </Box>
             </Box>
           </Grid>
-          <Grid item xs={3}>
+          <Grid item xs={4} sm={3}>
             <Typography variant="h5" style={headerStyle}>
               Links
             </Typography>
@@ -71,34 +94,79 @@ const Footer = () => {
               sx={{
                 display: "flex",
                 flexDirection: "column",
-                gap: "2rem",
+                gap: isSmallScreen ? "1rem" : "2rem",
                 marginTop: "2rem",
               }}
             >
-              <Box sx={{ display: "flex", alignItems: "center", gap: "1rem" }}>
+              <Box
+                sx={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "1rem",
+                  textDecoration: "none",
+                }}
+                component="a"
+                href="#home"
+              >
                 <ArrowRightAltIcon style={iconStyle} />
                 <Typography style={{ color: "#a3a3a3" }}>Home</Typography>
               </Box>
-              <Box sx={{ display: "flex", alignItems: "center", gap: "1rem" }}>
+              <Box
+                sx={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "1rem",
+                  textDecoration: "none",
+                }}
+                component="a"
+                href="#about"
+              >
                 <ArrowRightAltIcon style={iconStyle} />
                 <Typography style={{ color: "#a3a3a3" }}>About</Typography>
               </Box>
-              <Box sx={{ display: "flex", alignItems: "center", gap: "1rem" }}>
+              <Box
+                sx={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "1rem",
+                  textDecoration: "none",
+                }}
+                component="a"
+                href="#services"
+              >
                 <ArrowRightAltIcon style={iconStyle} />
                 <Typography style={{ color: "#a3a3a3" }}>Services</Typography>
               </Box>
-              <Box sx={{ display: "flex", alignItems: "center", gap: "1rem" }}>
+              <Box
+                sx={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "1rem",
+                  textDecoration: "none",
+                }}
+                component="a"
+                href="/github.com/olumayokunayo"
+              >
                 <ArrowRightAltIcon style={iconStyle} />
                 <Typography style={{ color: "#a3a3a3" }}>Projects</Typography>
               </Box>
-              <Box sx={{ display: "flex", alignItems: "center", gap: "1rem" }}>
+              <Box
+                sx={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "1rem",
+                  textDecoration: "none",
+                }}
+                component="a"
+                href="#contact"
+              >
                 <ArrowRightAltIcon style={iconStyle} />
                 <Typography style={{ color: "#a3a3a3" }}>Contact</Typography>
               </Box>
             </Box>
           </Grid>
 
-          <Grid item xs={4}>
+          <Grid item xs={8} sm={4}>
             <Typography variant="h5" style={headerStyle}>
               Have a Questions?
             </Typography>
@@ -106,20 +174,20 @@ const Footer = () => {
               sx={{
                 display: "flex",
                 flexDirection: "column",
-                gap: "2rem",
+                gap: isSmallScreen ? "1rem" : "2rem",
                 marginTop: "2rem",
               }}
             >
               <Box sx={{ display: "flex", alignItems: "center", gap: "1rem" }}>
                 <LocationOnIcon style={iconStyle} />
                 <Typography style={{ color: "#a3a3a3" }}>
-                  203 Fake St. Mountain View, San Francisco, California, USA
+                  Jericho Ib, OY0 STATE, NIGERIA.
                 </Typography>
               </Box>
               <Box sx={{ display: "flex", alignItems: "center", gap: "1rem" }}>
                 <CallIcon style={iconStyle} />
                 <Typography style={{ color: "#a3a3a3" }}>
-                  +2 392 3929 210
+                  +2349038001805
                 </Typography>
               </Box>
             </Box>
@@ -127,8 +195,10 @@ const Footer = () => {
         </Grid>
       </Container>
 
-      <Typography sx={{ color: "#a3a3a3", textAlign: "center" }}>
-        This portfolio is made with ❤️ {year}.
+      <Typography
+        sx={{ color: "#a3a3a3", textAlign: "center", marginTop: "1rem" }}
+      >
+        This portfolio belongs to Ayodeji Ogunfowora ❤️ {year}.
       </Typography>
     </Container>
   );

@@ -27,3 +27,16 @@ flex-basis: auto;
   max-width: 50%;
   height: 600px;
 }
+
+@media (max-width: 600px) {
+  .slide-content {
+    display: block;
+  }
+  .slide-content img {
+    max-width: 100%;
+  }
+  .slide-text {
+    position: absolute;
+    top: 30%;
+  }
+}

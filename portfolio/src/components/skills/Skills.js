@@ -1,10 +1,14 @@
 import React from "react";
-import { Button, Container, Grid, Typography } from "@mui/material";
+import {
+  Button,
+  Container,
+  Grid,
+  Typography,
+  useMediaQuery,
+} from "@mui/material";
 import { LinearProgress } from "@mui/material";
 import UseAnimations from "react-useanimations";
 import github from "react-useanimations/lib/github";
-import { redirect } from "react-router-dom";
-
 const SkillProgressBar = ({ skill, percentage }) => {
   return (
     <div style={{ marginBottom: "1rem" }}>
@@ -32,6 +36,7 @@ const SkillProgressBar = ({ skill, percentage }) => {
   );
 };
 const Skills = () => {
+  const isSmallScreen = useMediaQuery("(max-width: 600px)");
   const handleGit = () => {
     window.location.href = "https://github.com/olumayokunayo";
   };
@@ -43,7 +48,7 @@ const Skills = () => {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          minHeight: "80vh",
+          minHeight: isSmallScreen ? "100vh" : "100vh",
         }}
         id="skills"
       >
@@ -78,13 +83,17 @@ const Skills = () => {
           <Typography
             sx={{
               color: "#999999",
+              margin: "auto",
               textAlign: "center",
               marginTop: "-2rem",
               marginBottom: "3rem",
+              width: isSmallScreen ? "100%" : "80%",
             }}
           >
-            Far far away, behind the word mountains, far from the countries
-            Vokalia and Consonantia
+            Empowered with a diverse skill set, I specialize in crafting
+            seamless and responsive frontend solutions. Proficient in
+            cutting-edge technologies, I bring creativity and precision to every
+            project, ensuring a user-centric and engaging digital experience.
           </Typography>
           <Grid container spacing={4} sx={{ marginTop: "2rem" }}>
             <Grid item xs={6}>
@@ -98,6 +107,12 @@ const Skills = () => {
             </Grid>
             <Grid item xs={6}>
               <SkillProgressBar skill="HTML5" percentage={90} />
+            </Grid>
+            <Grid item xs={6}>
+              <SkillProgressBar skill="Node JS" percentage={50} />
+            </Grid>
+            <Grid item xs={6}>
+              <SkillProgressBar skill="Firebase" percentage={70} />
             </Grid>
           </Grid>
           <Button

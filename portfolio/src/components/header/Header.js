@@ -9,31 +9,15 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
-
+import { Link } from "react-router-dom"; 
 import "@fontsource/roboto/500.css";
-import { Link } from "react-router-dom";
-const pages = [
-  "Home",
-  "About",
-  "Resume",
-  "Services",
-  "Skills",
-  "Projects",
-  "Contact",
-];
+import "./Header.css";
+
+const pages = ["Home", "About", "Services", "Skills", "Contact"];
 
 const Header = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
-  //   const [displayName, setDisplayName] = React.useState("");
-  //   const [anchorElUser, setAnchorElUser] = React.useState(null);
-  const [isFixed, setIsFixed] = React.useState(false);
 
-  //   const handleCloseUserMenu = () => {
-  //     setAnchorElUser(null);
-  //   };
-  //   const handleOpenUserMenu = (event) => {
-  //     setAnchorElUser(event.currentTarget);
-  //   };
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
@@ -78,26 +62,22 @@ const Header = () => {
             >
               {pages.map((page) => (
                 <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography
-                    component="div"
+                  <Button
+                    component={Link} // Use Link instead of 'a'
+                    to={`/${page.toLowerCase()}`} // Update to use Link path
                     sx={{
-                      // textDecoration: "none",
                       color: "#000",
-                      // borderBottom: "1px solid transparent",
-                      "&:hover": {
-                        borderBottom: "1px solid yellow",
-                      },
                     }}
                   >
                     {page}
-                  </Typography>
+                  </Button>
                 </MenuItem>
               ))}
             </Menu>
           </Box>
           <Box
-            component="a"
-            href="/"
+            component={Link} // Use Link instead of 'a'
+            to="/"
             sx={{
               display: "flex",
               alignItems: "center",

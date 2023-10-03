@@ -1,13 +1,37 @@
 import React from "react";
-import { Box, Button, Container, Typography } from "@mui/material";
+import {
+  Box,
+  Button,
+  Container,
+  Typography,
+  useMediaQuery,
+} from "@mui/material";
 import image1 from "../../assets/port3.jpeg";
 import UseAnimations from "react-useanimations";
 import github from "react-useanimations/lib/github";
-
 const About = () => {
+  const isSmallScreen = useMediaQuery("(max-width: 600px)");
+  const divStyle = {
+    display: "flex",
+    alignItems: "center",
+    gap: isSmallScreen ? "2rem" : "3rem",
+  };
+  const handleGit = () => {
+    window.location.href = "https://github.com/olumayokunayo";
+  };
   return (
     <>
-      <Container maxWidth="lg" id="about" sx={{ marginTop: "4rem" }}>
+      <Container
+        maxWidth="lg"
+        id="about"
+        sx={{
+          height: isSmallScreen ? "100vh" : "100vh",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          marginBottom: isSmallScreen ? "-4rem" : "",
+        }}
+      >
         <Container>
           <div
             style={{
@@ -15,7 +39,7 @@ const About = () => {
               gap: "6rem",
             }}
           >
-            <Box>
+            <Box sx={{ display: isSmallScreen ? "none" : "" }}>
               <img src={image1} alt="" style={{ height: "600px" }} />
             </Box>
             <Box>
@@ -23,7 +47,7 @@ const About = () => {
                 variant="h2"
                 sx={{
                   color: "#fff",
-                  width: "50%",
+                  width: isSmallScreen ? "100%" : "50%",
                   fontWeight: 600,
                   position: "relative",
                 }}
@@ -49,14 +73,14 @@ const About = () => {
                   position: "relative",
                   marginTop: "-1.8rem",
                 }}
+                fontSize={isSmallScreen ? "1rem" : ""}
               >
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-                sunt in culpa qui officia deserunt mollit anim id est laborum."
+                Passionate frontend developer with expertise in crafting
+                seamless and visually stunning web interfaces. Proficient in
+                HTML, CSS, and JavaScript, specializing in framework like
+                React.js. Committed to continuous learning and embracing
+                challenges to create elegant solutions. Let's collaborate to
+                turn your digital vision into reality! 👨‍💻✨
               </Typography>
               <Box>
                 <Box
@@ -67,13 +91,7 @@ const About = () => {
                     gap: "1rem",
                   }}
                 >
-                  <div
-                    style={{
-                      display: "flex",
-                      alignItems: "center",
-                      gap: "3rem",
-                    }}
-                  >
+                  <div style={divStyle}>
                     <Typography variant="h6" sx={{ color: "#ffffff" }}>
                       Name:
                     </Typography>
@@ -81,13 +99,7 @@ const About = () => {
                       Ayodeji Ogunfowora
                     </span>
                   </div>
-                  <div
-                    style={{
-                      display: "flex",
-                      alignItems: "center",
-                      gap: "3rem",
-                    }}
-                  >
+                  <div style={divStyle}>
                     <Typography variant="h6" sx={{ color: "#ffffff" }}>
                       Date of birth:
                     </Typography>
@@ -95,13 +107,7 @@ const About = () => {
                       February 04, 1998
                     </span>
                   </div>
-                  <div
-                    style={{
-                      display: "flex",
-                      alignItems: "center",
-                      gap: "3rem",
-                    }}
-                  >
+                  <div style={divStyle}>
                     <Typography variant="h6" sx={{ color: "#ffffff" }}>
                       Address:
                     </Typography>
@@ -109,13 +115,7 @@ const About = () => {
                       Jericho Ib, OY NG
                     </span>
                   </div>
-                  <div
-                    style={{
-                      display: "flex",
-                      alignItems: "center",
-                      gap: "3rem",
-                    }}
-                  >
+                  <div style={divStyle}>
                     <Typography variant="h6" sx={{ color: "#ffffff" }}>
                       Zip code:
                     </Typography>
@@ -123,13 +123,7 @@ const About = () => {
                       200272
                     </span>
                   </div>
-                  <div
-                    style={{
-                      display: "flex",
-                      alignItems: "center",
-                      gap: "3rem",
-                    }}
-                  >
+                  <div style={divStyle}>
                     <Typography variant="h6" sx={{ color: "#ffffff" }}>
                       Email:
                     </Typography>
@@ -137,13 +131,7 @@ const About = () => {
                       olumayokunayo@gmail.com
                     </span>
                   </div>
-                  <div
-                    style={{
-                      display: "flex",
-                      alignItems: "center",
-                      gap: "3rem",
-                    }}
-                  >
+                  <div style={divStyle}>
                     <Typography variant="h6" sx={{ color: "#ffffff" }}>
                       Phone:
                     </Typography>
@@ -164,6 +152,7 @@ const About = () => {
                     display: "flex",
                     gap: "1rem",
                   }}
+                  onClick={handleGit}
                 >
                   <UseAnimations animation={github} size={30} color="#fff" />
                   <span style={{ textTransform: "none" }}>GitHub</span>
