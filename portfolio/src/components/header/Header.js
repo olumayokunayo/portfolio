@@ -76,8 +76,8 @@ const Header = () => {
             </Menu>
           </Box>
           <Box
-            component={Link} // Use Link instead of 'a'
-            to="/"
+            component="a"
+            href="/"
             sx={{
               display: "flex",
               alignItems: "center",

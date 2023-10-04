@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from "./components/header/Header";
 import Home from "./components/home/Home";
 import Hire from "./components/hire/Hire";
+import Project from "./components/projects/Project";
 
 const App = () => {
   return (
@@ -18,6 +19,7 @@ const App = () => {
           }
         />
         <Route path="/hire" element={<Hire />} />
+        <Route path="/projects" element={<Project />} />
       </Routes>
     </BrowserRouter>
   );
