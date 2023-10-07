@@ -29,7 +29,7 @@ const Footer = () => {
     backgroundColor: "#1a1a1a",
   };
   const handleTwitter = () => {
-    window.location.href = "https://twitter.com/dejieuro";
+    window.location.href = "https://twitter.com/olumayokundev";
   };
   const handleLinkedin = () => {
     window.location.href =
@@ -196,7 +196,7 @@ const Footer = () => {
       </Container>
 
       <Typography
-        sx={{ color: "#a3a3a3", textAlign: "center", marginTop: "1rem" }}
+        sx={{ color: "#a3a3a3", textAlign: "center", marginTop: "2rem" }}
       >
         This portfolio belongs to Ayodeji Ogunfowora ❤️ {year}.
       </Typography>

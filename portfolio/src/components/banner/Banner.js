@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Slider from "react-slick";
-import image1 from "../../assets/port3.jpeg";
+import bannerImg from "../../assets/port3.jpeg";
 import "./Banner.css";
 import {
   Box,
@@ -118,7 +118,7 @@ const Banner = () => {
                   </Button>
                 </div>
               </div>
-              <img src={image1} alt="Image 1" />
+              <img src={bannerImg} alt="Image 1" />
             </Box>
           </Box>
           <Box className="slide-container">
@@ -189,7 +189,7 @@ const Banner = () => {
                   </Button>
                 </div>
               </div>
-              <img src={image1} alt="Image 1" />
+              <img src={bannerImg} alt="Image 1" />
             </Box>
           </Box>
         </Slider>

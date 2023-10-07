@@ -5,16 +5,38 @@ import {
   TextField,
   Button,
   useMediaQuery,
+  Box,
 } from "@mui/material";
 import image1 from "../../assets/port3.jpeg";
 import { useRef } from "react";
 import emailjs from "@emailjs/browser";
 import { useNavigate } from "react-router-dom";
 import Loader from "../loader/Loader";
+import TwitterIcon from "@mui/icons-material/Twitter";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import InstagramIcon from "@mui/icons-material/Instagram";
 
 const Hire = () => {
-  const navigate = useNavigate();
   const isSmallScreen = useMediaQuery("(max-width: 600px)");
+  const headerStyle = {
+    color: "#fff",
+    fontSize: isSmallScreen ? "1.2rem" : "",
+  };
+  const iconStyle = {
+    color: "#fff",
+    textDecoration: "none",
+    cursor: "pointer",
+  };
+  const iconDivStyle = {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    height: "3rem",
+    width: "3rem",
+    borderRadius: " 50%",
+    backgroundColor: "#1a1a1a",
+  };
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -51,6 +73,16 @@ const Hire = () => {
       email: "",
       message: "",
     });
+  };
+  const handleTwitter = () => {
+    window.location.href = "https://twitter.com/olumayokundev";
+  };
+  const handleLinkedin = () => {
+    window.location.href =
+      "https://www.linkedin.com/in/olumayokun-ogunfowora-708544262/";
+  };
+  const handleInstagram = () => {
+    window.location.href = "https://www.instagram.com/olumayokunayo/";
   };
   return (
     <>
@@ -133,6 +165,24 @@ const Hire = () => {
               >
                 Submit
               </Button>
+              <Box
+                sx={{
+                  display: "flex",
+                  gap: "1rem",
+                  alignItems: "center",
+                  marginTop: "1rem",
+                }}
+              >
+                <div style={iconDivStyle}>
+                  <TwitterIcon style={iconStyle} onClick={handleTwitter} />
+                </div>
+                <div style={iconDivStyle}>
+                  <LinkedInIcon style={iconStyle} onClick={handleLinkedin} />
+                </div>
+                <div style={iconDivStyle}>
+                  <InstagramIcon style={iconStyle} onClick={handleInstagram} />
+                </div>
+              </Box>
             </form>
           </Container>
         </Container>

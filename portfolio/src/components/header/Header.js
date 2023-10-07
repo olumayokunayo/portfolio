@@ -12,10 +12,11 @@ import MenuItem from "@mui/material/MenuItem";
 import { Link } from "react-router-dom";
 import "@fontsource/roboto/500.css";
 import "./Header.css";
-
+import { useMediaQuery } from "@mui/material";
 const pages = ["Home", "About", "Services", "Skills", "Contact"];
 
 const Header = () => {
+  const isSmallScreen = useMediaQuery("(max-width: 600px)");
   const [anchorElNav, setAnchorElNav] = React.useState(null);
 
   const handleOpenNavMenu = (event) => {
@@ -43,7 +44,7 @@ const Header = () => {
               onClick={handleOpenNavMenu}
               color="#222"
             >
-              <MenuIcon sx={{ color: "#fff" }} />
+              <MenuIcon sx={{ color: isSmallScreen ? "#ffbd38" : "#fff" }} />
             </IconButton>
             <Menu
               id="menu-appbar"
@@ -92,7 +93,7 @@ const Header = () => {
                 ml: 2,
                 fontFamily: "Roboto, sans-serif",
                 fontWeight: 700,
-                color: "#fff",
+                color: isSmallScreen ? "#ffbd38" : "#fff",
                 textDecoration: "none",
                 letterSpacing: "-0.05rem",
               }}
